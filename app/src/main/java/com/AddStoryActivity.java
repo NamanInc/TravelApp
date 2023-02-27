@@ -58,34 +58,14 @@ public class AddStoryActivity extends AppCompatActivity {
                 if (snapshot.exists()){
                      name = snapshot.child("Name").getValue().toString();
                      profileurl = snapshot.child("ProfileImage").getValue().toString();
-
-
-
-
-
-
-
                 }
             }
 
             @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
+            public void onCancelled(@NonNull DatabaseError error) { }
         });
-
-
-
-
-
-
-
         storageReference = FirebaseStorage.getInstance().getReference("Stories");
-
         pickImage();
-
-
-
     }
 
     private void pickImage() {
@@ -101,11 +81,7 @@ public class AddStoryActivity extends AppCompatActivity {
 
         if (requestCode == CODE && resultCode == RESULT_OK && data!=null){
             mImageUri = data.getData();
-
             progressDialog.show();
-
-
-
             uploadimage();
         }
     }

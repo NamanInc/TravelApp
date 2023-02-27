@@ -1,43 +1,41 @@
 package com.Fragments;
 
+import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.media.Image;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.cardview.widget.CardView;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.os.Handler;
+import android.provider.Settings;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.Adapters.AdapterPost;
-import com.Adapters.AdapterProducts;
-import com.Adapters.AdapterUsers;
 import com.Adapters.AdapterUsers_verticle;
 import com.Adapters.HomeProAdapter;
 import com.Weather.WeatherData;
 import com.airbnb.lottie.LottieAnimationView;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -49,29 +47,26 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
-import com.loopj.android.http.RequestParams;
 import com.meghlaxshapplications.CategoryActivity;
-import com.meghlaxshapplications.HomeActivity;
-import com.meghlaxshapplications.travelapp.MainActivity;
 import com.meghlaxshapplications.travelapp.R;
 import com.meghlaxshapplications.travelapp.Upload_data;
-import com.meghlaxshapplications.travelapp.choosetype;
 import com.models.ModelPost;
 import com.models.ModelProducts;
 import com.models.ModelUsers;
 import com.notification.Token;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
+import java.util.concurrent.Executor;
 
 import cz.msebera.android.httpclient.Header;
-import de.hdodenhof.circleimageview.CircleImageView;
 
 import static android.content.Context.MODE_PRIVATE;
+import static androidx.core.content.ContextCompat.getSystemService;
 
 
 public class HomeFragment extends Fragment {
@@ -79,32 +74,38 @@ public class HomeFragment extends Fragment {
     private TextView gavname;
     private TextView nametxt;
     private FirebaseAuth mAuth;
-    private DatabaseReference databaseReference , ref ,hikingref;
-    RecyclerView postRecyclerView , hiking , temples;
+    private DatabaseReference databaseReference, ref, hikingref;
+    RecyclerView postRecyclerView, hiking, temples;
     private FirebaseDatabase firebaseDatabase;
     private CardView add;
-    private List<ModelPost> postList , hickinglist , templeList;
-    private CardView hiking_cat , rafting_cat, camping_cat;
-    AdapterPost adapterPost , hickingadapter , templeAdapter;
+    private List<ModelPost> postList, hickinglist, templeList;
+    private CardView hiking_cat, rafting_cat, camping_cat;
+    AdapterPost adapterPost, hickingadapter, templeAdapter;
     private RelativeLayout layout;
     private LottieAnimationView loadhome;
     private RelativeLayout mainrel;
     private RecyclerView homeUsers;
-    private ImageView homeImage2,homeImage1;
+    private ImageView homeImage2, homeImage1;
     private AdapterUsers_verticle adapterUsers;
     private TextView govname;
     private List<ModelUsers> modelUsersList;
     private RecyclerView recyclerviewproducts;
     private List<ModelProducts> productsList;
-    private ImageView homeImage4,homeImage3;
-    private ImageView darkmodebtn ;
-    private TextView wheathertype  , temperaturetxt;
-    String url = "https://api.openweathermap.org/data/2.5/weather?lat=12.4637&lon=130.8444&appid=fcae4299299769448808cf69d166d76f";
+
+    //Here i do my  code
+    private FusedLocationProviderClient fusedLocationClient;
+    //Here is my code end
+
+    private ImageView homeImage4, homeImage3;
+    private ImageView darkmodebtn;
+    private TextView wheathertype, temperaturetxt;
+    String Lat = "0";
+    String lon = "0";
+    String apiKeys = "fcae4299299769448808cf69d166d76f";
+    //    String url = "https://api.openweathermap.org/data/2.5/weather?lat=12.4637&lon=130.8444&appid=fcae4299299769448808cf69d166d76f";
+    String url = "https://api.openweathermap.org/data/2.5/weather?";
     private String channel;
     private LottieAnimationView lottieAnimationView;
-
-
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -140,66 +141,47 @@ public class HomeFragment extends Fragment {
         govname = view.findViewById(R.id.gavname);
 
         getWeatherdata();
-
-
-
-
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(),RecyclerView.HORIZONTAL,false);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false);
         homeUsers.setLayoutManager(linearLayoutManager);
 
-        LinearLayoutManager linearLayoutManager3 = new LinearLayoutManager(getContext(),RecyclerView.HORIZONTAL,false);
+        LinearLayoutManager linearLayoutManager3 = new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false);
         recyclerviewproducts.setLayoutManager(linearLayoutManager3);
 
         getActivity().getWindow().setStatusBarColor(getActivity().getColor(R.color.pagecolor));
 
 
-
-
         showProducts();
-
-
-
 
 
         showUsers();
         loadhomeimage();
 
 
-
-
-
-
-
-
-
-
         camping_cat = view.findViewById(R.id.camping_cat);
-         ref = FirebaseDatabase.getInstance().getReference("Posts");
+        ref = FirebaseDatabase.getInstance().getReference("Posts");
         hikingref = FirebaseDatabase.getInstance().getReference("Posts");
-         hickinglist = new ArrayList<>();
+        hickinglist = new ArrayList<>();
 
 
         SharedPreferences shared = getActivity().getSharedPreferences("MODE", MODE_PRIVATE);
-         channel = (shared.getString("MODE", ""));
+        channel = (shared.getString("MODE", ""));
 
-        if (channel.equals("Dark")){
+        if (channel.equals("Dark")) {
 
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
             darkmodebtn.setImageResource(R.drawable.bright);
 
 
-        }
-        else {
+        } else {
 
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
             darkmodebtn.setImageResource(R.drawable.modedark);
         }
 
 
-
-        SharedPreferences sp = this.getActivity().getSharedPreferences("SP_USER",MODE_PRIVATE);
+        SharedPreferences sp = this.getActivity().getSharedPreferences("SP_USER", MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
-        editor.putString("UID" , FirebaseAuth.getInstance().getCurrentUser().getUid());
+        editor.putString("UID", FirebaseAuth.getInstance().getCurrentUser().getUid());
         //editor.putString("Mode",)
         editor.apply();
 
@@ -207,34 +189,29 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                if (channel.equals("Dark")){
+                if (channel.equals("Dark")) {
 
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
-                    SharedPreferences sp = getActivity().getSharedPreferences("MODE",MODE_PRIVATE);
+                    SharedPreferences sp = getActivity().getSharedPreferences("MODE", MODE_PRIVATE);
                     SharedPreferences.Editor editor = sp.edit();
-                    editor.putString("MODE" , "Light");
+                    editor.putString("MODE", "Light");
                     //editor.putString("Mode",)
                     editor.apply();
 
 
-                }else {
+                } else {
 
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
 
-                    SharedPreferences sp = getActivity().getSharedPreferences("MODE",MODE_PRIVATE);
+                    SharedPreferences sp = getActivity().getSharedPreferences("MODE", MODE_PRIVATE);
                     SharedPreferences.Editor editor = sp.edit();
-                    editor.putString("MODE" , "Dark");
+                    editor.putString("MODE", "Dark");
                     //editor.putString("Mode",)
                     editor.apply();
 
 
                 }
-
-
-
-
-
 
 
 //                startActivity(new Intent(getContext(),HomeActivity.class));
@@ -245,17 +222,16 @@ public class HomeFragment extends Fragment {
         updateToken(FirebaseInstanceId.getInstance().getToken());
 
 
-         camping_cat.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View v) {
+        camping_cat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-                 Intent intent = new Intent(getActivity(), CategoryActivity.class);
-                 intent.putExtra("Camping","Camping");
-                 startActivity(intent);
+                Intent intent = new Intent(getActivity(), CategoryActivity.class);
+                intent.putExtra("Camping", "Camping");
+                startActivity(intent);
 
-             }
-         });
-
+            }
+        });
 
 
         add.setOnClickListener(new View.OnClickListener() {
@@ -268,15 +244,15 @@ public class HomeFragment extends Fragment {
 
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference("Users");
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,true);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, true);
         layoutManager.setStackFromEnd(true);
 
-        LinearLayoutManager hinkinglayoutmanager = new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,true);
-        LinearLayoutManager templelayout = new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,true);
+        LinearLayoutManager hinkinglayoutmanager = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, true);
+        LinearLayoutManager templelayout = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, true);
         hinkinglayoutmanager.setStackFromEnd(true);
         temples.setLayoutManager(templelayout);
         templelayout.setStackFromEnd(true);
-       // layoutManager.setReverseLayout(true);
+        // layoutManager.setReverseLayout(true);
         postList = new ArrayList<>();
         postRecyclerView.setLayoutManager(layoutManager);
         hiking.setLayoutManager(hinkinglayoutmanager);
@@ -286,14 +262,8 @@ public class HomeFragment extends Fragment {
         loadtemples();
 
 
-
-
         retricvedata();
         // Inflate the layout for this fragment
-
-
-
-
 
 
         return view;
@@ -303,49 +273,49 @@ public class HomeFragment extends Fragment {
 
     private void getWeatherdata() {
 
-        String Lat = "0";
-        String lon = "0";
+        Lat = "046.8484";
+        lon = "650.64685";
 
-        String apiKeys = "fcae4299299769448808cf69d166d76f";
-
-
-        RequestParams params = new RequestParams();
-        params.put("lat",Lat);
-        params.put("lon",lon);
-        params.put("appid",apiKeys);
-
-        letSdoSomeNetworking(params);
-
-
-
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireContext());
+        if (ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                requestPermissions();
+        }
+        if (ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+            fusedLocationClient.getLastLocation()
+                    .addOnSuccessListener(requireActivity(), new OnSuccessListener<Location>() {
+                        @Override
+                        public void onSuccess(Location location) {
+                            if (location != null) {
+                                Lat = String.valueOf(location.getLatitude());
+                                lon = String.valueOf(location.getLongitude());
+                                letSdoSomeNetworking(Lat, lon);
+                            }
+                        }
+                    });
+        }
     }
 
-    private void letSdoSomeNetworking(RequestParams params) {
-
+    private void letSdoSomeNetworking(String Lat, String lon) {
         AsyncHttpClient client = new AsyncHttpClient();
-        client.get(url,params,new JsonHttpResponseHandler(){
-
-
+        client.get(url+"lat=" + Lat + "&lon="+ lon +"&appid=" + apiKeys,new JsonHttpResponseHandler(){
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-
-
                 Toast.makeText(getContext(), "Data Fetched", Toast.LENGTH_SHORT).show();
-
                 WeatherData weatherData = WeatherData.fromJson(response);
                 updateUri(weatherData);
-
                 //super.onSuccess(statusCode, headers, response);
             }
-
             @Override
             public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
                 //super.onFailure(statusCode, headers, throwable, errorResponse);
             }
         });
+    }
 
-
-
+    private void requestPermissions() {
+        ActivityCompat.requestPermissions(requireActivity(), new String[]{
+                Manifest.permission.ACCESS_COARSE_LOCATION,
+                Manifest.permission.ACCESS_FINE_LOCATION}, 44);
     }
 
     private void updateUri(WeatherData weatherData) {
