@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/item_home"
+        android:title="Home"
+
+        android:icon="@drawable/home"/>
+
+    <item
+        android:id="@+id/trending_icon"
+        android:title="Trending"
+        android:icon="@drawable/fire2"/>
+
+    <item
+        android:id="@+id/item_notification"
+        android:title="Reels"
+        android:icon="@drawable/reelsplay"/>
+
+    <item
+        android:id="@+id/item_Posts"
+        android:title="Posts"
+        android:icon="@drawable/posts"/>
+
+    <item
+        android:id="@+id/item_save"
+        android:title="Search"
+        android:icon="@drawable/searcheicon"/>
+
+
+
+</menu>

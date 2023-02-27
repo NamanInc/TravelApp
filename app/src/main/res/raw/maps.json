@@ -1,0 +1,18 @@
+[
+  {
+    "featureType": "poi.attraction",
+    "stylers": [
+      {
+        "color": "#f61313"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway",
+    "stylers": [
+      {
+        "color": "#f6d013"
+      }
+    ]
+  }
+]

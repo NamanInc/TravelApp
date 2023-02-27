@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pagecolor"
+    tools:context=".GoogleLogin">
+
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/applogofull"/>
+
+    <TextView
+        android:layout_above="@+id/continuewithgoogle"
+
+        android:id="@+id/textlogo"
+        android:layout_marginBottom="30dp"
+        android:textColor="#353333"
+        android:fontFamily="@font/lato"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:text="@string/logintitle" />
+
+
+    <androidx.cardview.widget.CardView
+
+        android:elevation="10dp"
+        android:backgroundTint="@color/white"
+        android:id="@+id/continuewithgoogle"
+
+
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        app:cardCornerRadius="30dp"
+        android:layout_marginBottom="70dp"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_alignParentBottom="true"
+
+
+
+
+
+
+        >
+
+        <RelativeLayout
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/googleicon"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LOG IN WITH GOOGLE"
+                android:fontFamily="@font/lato_bold"
+                android:textColor="#292727"
+                android:layout_centerVertical="true"
+                android:layout_centerInParent="true"/>
+
+
+
+
+        </RelativeLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:textSize="15sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="More Options"
+        android:padding="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/lato_bold"
+        android:textColor="#810000"/>
+
+</RelativeLayout>

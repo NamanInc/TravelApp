@@ -1,0 +1,178 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/pagecolor"
+    tools:context="com.Fragments.Trending">
+
+
+
+    <LinearLayout
+
+        android:orientation="vertical"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+
+
+
+    <RelativeLayout
+        android:layout_alignParentTop="true"
+
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+
+
+
+
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Trending"
+            android:textSize="20sp"
+            android:layout_centerVertical="true"
+            android:textColor="@color/textcolor"
+            android:fontFamily="@font/poppins_medium"
+            android:layout_marginLeft="20dp"/>
+
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+
+            android:id="@+id/d"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+
+          android:layout_centerVertical="true"
+
+            app:lottie_fileName="fire12.json"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"/>
+
+
+
+
+
+
+    </RelativeLayout>
+
+        <RelativeLayout
+
+            android:layout_marginTop="-20dp"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="550dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/trendu"/>
+
+            <androidx.viewpager2.widget.ViewPager2
+               android:layout_centerInParent="true"
+
+                android:id="@+id/viewpagertrending"
+                android:layout_width="match_parent"
+
+                android:layout_height="match_parent">
+
+
+            </androidx.viewpager2.widget.ViewPager2>
+
+            <com.airbnb.lottie.LottieAnimationView
+
+                android:id="@+id/animationViews"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+
+                app:lottie_fileName="swipe.json"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"/>
+
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Trending Places"
+                android:fontFamily="@font/poppins_medium"
+
+                android:textSize="16sp"
+                android:textColor="@color/textcolor"
+                android:drawableRight="@drawable/next"
+                android:drawableTint="@color/textcolor"
+
+                />
+
+
+
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_width="match_parent"
+            android:layout_marginTop="15dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/trendingRecyclerview"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ScrollView>

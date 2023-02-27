@@ -1,0 +1,88 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/pagecolor"
+    tools:context="com.Fragments.Posts">
+
+   <RelativeLayout
+
+       android:layout_marginRight="10dp"
+       android:layout_marginLeft="10dp"
+
+       android:layout_width="match_parent"
+       android:layout_height="?actionBarSize">
+
+      <ImageView
+          android:id="@+id/uploadpost_camer"
+          android:layout_width="20dp"
+          android:layout_marginLeft="10dp"
+          android:layout_height="20dp"
+          android:src="@drawable/camera"
+          android:tint="@color/textcolor"
+          android:layout_centerVertical="true"/>
+
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="SapataGram"
+          android:fontFamily="@font/poppins_medium"
+          android:textSize="15sp"
+          android:layout_centerVertical="true"
+          android:layout_centerHorizontal="true"
+          android:textColor="@color/textcolor"/>
+
+      <ImageView
+          android:id="@+id/chatbtn"
+          android:layout_width="20dp"
+          android:layout_height="20dp"
+          android:layout_marginRight="10dp"
+          android:layout_alignParentRight="true"
+          android:src="@drawable/send"
+          android:tint="@color/textcolor"
+          android:layout_centerVertical="true"/>
+
+
+   </RelativeLayout>
+
+
+   <androidx.core.widget.NestedScrollView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:orientation="vertical"
+          android:layout_height="wrap_content">
+
+         <androidx.recyclerview.widget.RecyclerView
+             android:layout_centerInParent="true"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_margin="5dp"
+             android:id="@+id/storyrecycler"/>
+
+         <androidx.recyclerview.widget.RecyclerView
+             android:layout_marginTop="8dp"
+             android:layout_centerInParent="true"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:id="@+id/recyclerviewpost"/>
+
+
+
+      </LinearLayout>
+
+
+
+
+
+
+   </androidx.core.widget.NestedScrollView>
+
+
+
+
+</LinearLayout>

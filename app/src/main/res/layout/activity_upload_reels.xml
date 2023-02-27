@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/pagecolor"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".Upload_reels">
+
+    <androidx.cardview.widget.CardView
+        android:backgroundTint="#666878"
+        app:cardElevation="10dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        app:cardCornerRadius="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="450dp">
+
+        <RelativeLayout
+            android:id="@+id/pickvideobtn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/plusicon"
+
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/addplace"
+                />
+
+            <VideoView
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:id="@+id/reelPlay"
+                android:layout_centerInParent="true"
+
+
+                android:visibility="gone"
+
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+
+
+        </RelativeLayout>
+
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
+    <com.hendraanggrian.widget.SocialAutoCompleteTextView
+        android:hint="Caption"
+
+        app:hashtagColor="@color/grey_font"
+        app:mentionColor="@color/teal_200"
+        android:id="@+id/caption"
+        android:fontFamily="@font/montserrat"
+
+        android:layout_marginTop="10dp"
+        android:textColorHint="#5E5858"
+        android:layout_width="match_parent"
+        android:padding="15dp"
+        android:textSize="14sp"
+        android:textColor="#3A3737"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+
+        android:layout_height="wrap_content"
+        android:background="@drawable/searchbc"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+
+    <Button
+        android:elevation="10dp"
+        android:id="@+id/upload_reels_btn"
+        android:textColor="@android:color/white"
+        android:fontFamily="@font/montserrat"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="30dp"
+
+    android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:textAllCaps="false"
+        android:layout_marginRight="30dp"
+        android:text="Upload"
+        android:background="@drawable/button"
+        android:layout_height="wrap_content"/>
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/upload_reels_btn"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:fontFamily="@font/montserrat"
+            android:textSize="12sp"
+            android:textAlignment="center"
+            android:textColor="#3E3C3C"
+
+            android:text="Please make sure your video is compressed and not bigger than 20 seconds."/>
+
+    </RelativeLayout>
+
+
+</LinearLayout>

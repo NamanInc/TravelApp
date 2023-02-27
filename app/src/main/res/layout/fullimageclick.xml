@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="300dp"
+    android:layout_height="300dp">
+
+    <ImageView
+        android:id="@+id/fullimage"
+        android:scaleType="centerCrop"
+        android:src="@drawable/demopost"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+
+    </ImageView>
+
+    <LinearLayout
+        android:layout_marginBottom="15dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+
+
+    <ImageView
+        android:id="@+id/likebtndialog"
+        android:layout_gravity="center"
+        android:src="@drawable/dislike"
+        android:tint="@android:color/white"
+        android:layout_width="20dp"
+        android:layout_height="20dp"/>
+
+        <TextView
+            android:id="@+id/liketxtdialog"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1.2K"
+            android:layout_gravity="center"
+            android:textColor="@android:color/white"
+            android:fontFamily="@font/lato_bold"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

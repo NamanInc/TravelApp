@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:orientation="vertical"
+    android:layout_marginStart="13dp"
+
+    android:layout_height="wrap_content">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:civ_border_width="2dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:id="@+id/story_photo"
+        app:civ_border_color="@color/purple_200"
+        android:src="@drawable/profiledemo"/>
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:civ_border_width="2dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:visibility="gone"
+        android:id="@+id/story_photo_seen"
+        app:civ_border_color="#ACA5A5"
+        android:src="@drawable/profiledemo"/>
+
+
+    <TextView
+        android:layout_gravity="center"
+        android:fontFamily="@font/montserrat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Username"
+        android:maxLines="1"
+        android:textSize="12sp"
+        android:layout_marginTop="5dp"
+
+        android:id="@+id/story_username"
+        android:textColor="@color/textcolor"/>
+
+
+
+</LinearLayout>

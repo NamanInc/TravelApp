@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/black"
+    android:layout_height="match_parent">
+
+
+
+
+
+    <com.google.android.exoplayer2.ui.PlayerView
+        android:id="@+id/reels_player"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:controller_layout_id="@layout/fokot"
+        app:resize_mode="fill" />
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/mainrel"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="100dp">
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_imageview"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/profiledemo"/>
+
+            <TextView
+                android:id="@+id/profile_username"
+                android:layout_width="wrap_content"
+                android:text=""
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:textSize="15sp"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:fontFamily="@font/montserrat"
+                android:layout_height="wrap_content"/>
+
+
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:id="@+id/tickwhite"
+
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/whitetick"/>
+
+            <RelativeLayout
+                android:layout_gravity="center"
+                android:id="@+id/profile_follow_btn1"
+                android:background="@drawable/btn_reels"
+
+                android:layout_centerInParent="true"
+
+                android:layout_marginLeft="8dp"
+                android:backgroundTint="@color/white"
+
+                android:layout_width="70dp"
+                android:layout_height="22dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center">
+
+
+                    <ProgressBar
+                        android:id="@+id/progressbar13"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_centerInParent="true"
+                        android:indeterminateTint="@android:color/white"
+                        android:visibility="gone" />
+
+
+                    <TextView
+                        android:id="@+id/text_follow"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/lato_bold"
+                        android:text="Follow"
+                        android:textColor="@android:color/white"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:visibility="visible" />
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+
+
+
+
+        </LinearLayout>
+
+
+        <com.hendraanggrian.widget.SocialTextView
+            android:id="@+id/captios_set"
+            android:layout_marginTop="10dp"
+            android:textSize="13sp"
+            android:textColor="#FFFFFF"
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+
+
+            app:hashtagColor="@android:color/holo_red_dark"
+            app:mentionColor="@color/grey_font"
+            android:text="#hashtag and @mention."/>
+
+        <!--        <TextView-->
+<!--            android:id="@+id/captios_set"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Caption"-->
+<!--            android:textSize="13sp"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:textStyle="normal"-->
+<!--            android:fontFamily="@font/poppins_medium"-->
+<!--            android:textColor="@android:color/white"-->
+<!--            />-->
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:layout_marginBottom="60dp"
+
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:visibility="gone"
+
+            android:id="@+id/animationView"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+
+            app:lottie_fileName="music.json"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"/>
+
+        <LinearLayout
+            android:layout_gravity="center"
+
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/likebtnvideo"
+                android:layout_width="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_gravity="right"
+
+                android:layout_height="30dp"
+                android:tint="@android:color/white"
+                android:src="@drawable/dislike"/>
+
+            <TextView
+                android:id="@+id/likecountvideo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="5dp"
+                android:textSize="13sp"
+                android:fontFamily="@font/montserrat"/>
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/comment_reels"
+
+                android:layout_width="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_gravity="right"
+
+                android:layout_height="30dp"
+                android:tint="@android:color/white"
+                android:src="@drawable/comment"/>
+
+            <TextView
+                android:id="@+id/comment_reels_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="5dp"
+                android:textSize="13sp"
+                android:fontFamily="@font/montserrat"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="right"
+
+                android:layout_height="30dp"
+                android:tint="@android:color/white"
+                android:src="@drawable/save"/>
+
+
+        </LinearLayout>
+
+
+
+
+
+    </LinearLayout>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_marginTop="350dp"
+        android:id="@+id/likeanimation"
+        android:visibility="gone"
+        android:layout_width="200dp"
+        android:layout_centerInParent="true"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+
+        app:lottie_fileName="lie.json"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"/>
+
+
+
+
+</RelativeLayout>

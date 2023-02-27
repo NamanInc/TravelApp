@@ -1,0 +1,42 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.TravelApp" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/textcolor</item>
+        <item name="colorPrimaryVariant">@color/textcolor</item>
+        <item name="colorOnPrimary">@color/pagecolor</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/textcolor</item>
+        <item name="colorSecondaryVariant">@color/textcolor</item>
+        <item name="colorOnSecondary">@color/textcolor</item>
+
+        <item name="colorPrimaryDark">@color/textcolor</item>
+
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
+
+
+
+
+        <item name="android:windowLightStatusBar" tools:targetApi="23">true</item>
+        <item name="colorAccent">@color/black</item>
+
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/pagecolor</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="BottomSheetDialogtheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/BottomSheetStyle</item>
+    </style>
+
+    <style name="BottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="mySpinnerItemStyle" parent="@android:style/Widget.Holo.DropDownItem.Spinner">
+        <item name="android:textColor">@color/textcolor</item>
+    </style>
+
+
+
+</resources>

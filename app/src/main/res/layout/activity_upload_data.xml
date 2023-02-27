@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:background="@color/pagecolor"
+    tools:context=".Upload_data">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <RelativeLayout
+            android:paddingBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/postbtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Post"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:textSize="22sp"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/purple_200"
+                android:layout_marginRight="30dp"/>
+
+
+
+
+
+
+
+
+    <LinearLayout
+        android:id="@+id/linearlay"
+        android:orientation="vertical"
+        android:layout_width="110dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:elevation="10dp"
+        android:background="@drawable/dashedborder"
+
+        android:layout_height="120dp">
+        <ImageView
+            android:scaleType="centerCrop"
+            android:id="@+id/thumbnail_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"/>
+
+        <ImageView
+            android:id="@+id/plusimagethumb"
+            android:layout_marginTop="20dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/addplace"
+            android:tint="@color/purple_200"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:id="@+id/text_hide"
+            android:layout_gravity="center"
+            android:textColor="#3A3838"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:fontFamily="@font/montserrat"
+            android:textSize="10sp"
+            android:text="Featured Image"/>
+
+
+
+    </LinearLayout>
+        </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Some More Details."
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/poppins_medium"
+        android:textSize="22sp"
+        android:textColor="@color/textcolor"
+        />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/name_place"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/searchbc"
+            android:hint="Name of Place"
+            android:fontFamily="@font/montserrat"
+            android:padding="16dp"
+            android:textSize="13sp"
+
+            android:textColor="@color/textcolor"
+            android:textColorHint="@color/hintcolor"/>
+
+        <EditText
+            android:id="@+id/description"
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/searchbc"
+            android:hint="What made this place famous ?"
+            android:fontFamily="@font/montserrat"
+            android:padding="16dp"
+            android:textSize="13sp"
+
+            android:textColor="@color/textcolor"
+            android:textColorHint="@color/hintcolor"/>
+
+        <EditText
+            android:id="@+id/town_cityname"
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/searchbc"
+            android:hint="Town / Nearby City etc"
+            android:fontFamily="@font/montserrat"
+            android:padding="16dp"
+            android:textSize="13sp"
+
+            android:textColor="@color/textcolor"
+            android:textColorHint="@color/hintcolor"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:padding="16dp"
+            android:background="@drawable/searchbc"
+            android:layout_marginTop="15dp"
+            android:layout_height="wrap_content">
+
+
+
+
+
+        <Spinner
+
+            android:id="@+id/states"
+
+
+
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/textcolor"
+
+            android:textSize="13sp"
+            android:backgroundTint="@color/textcolor"
+
+
+
+
+
+
+           />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:padding="16dp"
+            android:background="@drawable/searchbc"
+            android:layout_marginTop="15dp"
+            android:layout_height="wrap_content">
+
+
+
+
+
+            <Spinner
+
+                android:id="@+id/category_spinner"
+
+
+
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+
+                android:fontFamily="@font/montserrat"
+                android:textColor="@color/textcolor"
+
+                android:textSize="13sp"
+                android:backgroundTint="@color/textcolor"
+
+
+
+
+
+
+                />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/picode"
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/searchbc"
+            android:hint="Pincode if it have"
+            android:fontFamily="@font/montserrat"
+            android:padding="16dp"
+            android:textSize="13sp"
+
+            android:textColor="@color/textcolor"
+            android:textColorHint="@color/hintcolor"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add More Images One By One"
+                android:textColor="@color/textcolor"
+                android:fontFamily="@font/poppins_medium"/>
+
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/jai"
+                    android:scaleType="centerCrop"
+                    android:id="@+id/image1"/>
+
+
+                <ImageView
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/jai"
+                    android:scaleType="centerCrop"
+                    android:id="@+id/image2"/>
+
+
+                <ImageView
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/jai"
+                    android:scaleType="centerCrop"
+                    android:id="@+id/image3"/>
+
+
+                <ImageView
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/jai"
+                    android:scaleType="centerCrop"
+                    android:id="@+id/image4"/>
+
+
+
+
+
+
+            </LinearLayout>
+
+
+
+
+
+
+
+
+
+        </LinearLayout>
+
+
+
+
+
+        <TextView
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reel Video"
+            android:textSize="20sp"
+            android:fontFamily="@font/poppins_medium"
+            android:layout_marginTop="20dp"
+                   android:textColor="#3C3939"
+            />
+
+
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/lreel"
+            android:orientation="vertical"
+            android:layout_width="55dp"
+
+            android:layout_marginTop="20dp"
+            android:elevation="10dp"
+            android:background="@drawable/dashedborder"
+
+            android:layout_height="100dp">
+            <VideoView
+
+
+                android:id="@+id/video_reel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"/>
+
+            <ImageView
+                android:id="@+id/reel_icon"
+                android:layout_marginTop="15dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/video"
+                android:tint="@color/purple_200"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/reel_text"
+                android:textColor="#3A3838"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/montserrat"
+                android:textSize="10sp"
+                android:layout_gravity="center"
+                android:text="Reels"/>
+
+
+
+
+
+
+
+        </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+        <LinearLayout
+            android:layout_marginBottom="20dp"
+
+
+            android:layout_marginTop="20dp"
+            android:background="@color/baground"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+
+
+
+        <TextView
+            android:textAlignment="center"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="25dp"
+            android:textSize="17sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Rate your Experience at the place ?"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/textcolor"/>
+
+
+
+        <me.zhanghai.android.materialratingbar.MaterialRatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ratebar"
+            android:paddingBottom="20dp"
+            android:layout_gravity="center"
+            app:mrb_fillBackgroundStars="true"
+            android:progressTint="@color/purple_200"
+            style="@style/Widget.MaterialRatingBar.RatingBar"
+            android:layout_marginTop="20dp"
+           android:progressBackgroundTint="@android:color/darker_gray"
+
+             />
+
+        </LinearLayout>
+
+
+
+
+<!--        <RatingBar-->
+<!--            android:backgroundTint="@android:color/darker_gray"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:numStars="5"-->
+<!--            android:stepSize="0.1"-->
+<!--            android:isIndicator="true"-->
+
+<!--            android:layout_marginTop="20dp"/>-->
+
+
+
+
+
+
+
+    </LinearLayout>
+    </LinearLayout>
+
+
+
+</ScrollView>

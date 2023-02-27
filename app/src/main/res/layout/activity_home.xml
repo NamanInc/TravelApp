@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+
+    android:background="#F2F4FC"
+    tools:context="com.meghlaxshapplications.HomeActivity">
+
+    <androidx.viewpager.widget.ViewPager
+        android:visibility="gone"
+        android:orientation="vertical"
+        android:id="@+id/frgment_container"
+
+        android:layout_width="match_parent"
+    android:layout_above="@+id/chip128"
+        android:layout_height="match_parent">
+
+
+
+
+    </androidx.viewpager.widget.ViewPager>
+
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:visibility="visible"
+
+        android:id="@+id/loadinanim"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_centerInParent="true"
+
+        app:lottie_fileName="loadhome.json"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"/>
+
+
+
+
+
+    <com.ismaeldivita.chipnavigation.ChipNavigationBar
+        android:layout_width="match_parent"
+        app:cnb_menuResource="@menu/menu"
+        android:id="@+id/chip128"
+        android:background="@color/pagecolor"
+        android:layout_alignParentBottom="true"
+
+        app:cnb_unselectedColor="@color/textcolor"
+        app:cnb_radius="20dp"
+        app:cnb_badgeColor="@color/textcolor"
+        android:padding="10dp"
+        app:cnb_iconSize="22dp"
+
+
+
+
+        app:cnb_orientationMode="horizontal"
+        android:elevation="10dp"
+
+        android:layout_height="wrap_content">
+
+
+
+    </com.ismaeldivita.chipnavigation.ChipNavigationBar>
+
+
+</RelativeLayout>

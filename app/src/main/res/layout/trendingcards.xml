@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+
+    app:cardElevation="10dp"
+    android:orientation="vertical"
+    android:layout_marginRight="10dp"
+
+    android:background="@android:color/transparent"
+
+
+    app:cardCornerRadius="10dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="170dp"
+    android:layout_height="230dp"
+    android:backgroundTint="@android:color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/click"
+        android:backgroundTint="@color/pagecolor"
+        android:layout_width="match_parent"
+        app:cardCornerRadius="10dp"
+        android:layout_height="230dp">
+
+        <RelativeLayout
+
+
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/thumb_image"
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/jai"/>
+
+
+            <RelativeLayout
+                android:background="#37171717"
+
+                android:layout_alignParentBottom="true"
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+
+
+                <LinearLayout
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="10dp"
+
+
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:maxLines="1"
+                        android:maxWidth="180dp"
+                        android:id="@+id/nameofplace"
+                        android:layout_marginTop="10dp"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/poppins_medium"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Jaisalmer"
+                        android:textColor="@android:color/white"/>
+
+                    <TextView
+                        android:id="@+id/stateofplace"
+
+                        android:textSize="10sp"
+                        android:layout_marginTop="-3dp"
+                        android:fontFamily="@font/montserrat"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rajasthan"
+                        android:layout_marginBottom="10dp"
+                        android:textColor="@android:color/white"/>
+
+                </LinearLayout>
+
+
+
+
+
+
+            </RelativeLayout>
+
+
+            <ImageView
+                android:tint="@android:color/white"
+                android:id="@+id/likebtn"
+
+
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/dislike"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="10dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </RelativeLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+
+
+</LinearLayout>

@@ -1,0 +1,56 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/pagecolor"
+    tools:context="com.Fragments.NotificationFragemt">
+
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/plus_card"
+        app:cardCornerRadius="10dp"
+        android:layout_width="40dp"
+        android:layout_marginTop="20dp"
+
+        app:cardElevation="10dp"
+        android:backgroundTint="@color/white"
+        android:layout_marginLeft="20dp"
+        android:layout_height="40dp">
+
+
+        <ImageView
+            android:tint="@android:color/black"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/addplace"
+            android:layout_gravity="center"/>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- TODO: Update blank fragment layout -->
+<androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/videorecyclerview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+</androidx.recyclerview.widget.RecyclerView>
+
+    <ProgressBar
+        android:layout_alignParentBottom="true"
+        android:id="@+id/reelbar"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:progressTint="@color/purple_200"
+
+
+
+        style="?android:attr/progressBarStyleHorizontal"
+        android:indeterminate="true"
+        android:indeterminateOnly="false" />
+
+</RelativeLayout>

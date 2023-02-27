@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#F8FDFF"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:textColor="@color/black"
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/lato_bold"
+        android:text="TRAVEL APP"
+        android:textSize="28sp" />
+
+
+    <ImageView
+        android:elevation="10dp"
+        android:layout_marginTop="50dp"
+        android:id="@+id/image"
+        android:layout_width="350dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/text"
+        android:layout_height="300dp"
+        android:src="@drawable/travel"
+        />
+
+    <TextView
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textColor="#252323"
+        android:textSize="15sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/image"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
+        android:fontFamily="@font/montserrat"
+        android:id="@+id/ter"
+        android:text="@string/quote" />
+
+    <TextView
+        android:textColor="#333030"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Meghlaxsh Pvt Ltd ❤️"
+        android:layout_below="@id/ter"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/getstarted"
+        android:drawableRight="@drawable/next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button"
+        android:layout_alignParentBottom="true"
+        android:padding="5dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="30dp"
+
+
+        android:elevation="10dp"
+        android:textColor="@android:color/white"
+        android:text="Get Started"/>
+
+
+
+
+
+
+</RelativeLayout>

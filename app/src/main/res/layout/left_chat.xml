@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingRight="10dp"
+    android:id="@+id/messagelayout"
+    android:paddingLeft="10dp"
+    android:layout_marginTop="5dp"
+    android:paddingBottom="5dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="40dp"
+            android:id="@+id/profileIv"
+            android:layout_height="40dp"
+            android:src="@drawable/profiledemo"/>
+
+        <TextView
+            android:id="@+id/messagetv"
+            android:layout_marginTop="5dp"
+
+            android:textSize="12sp"
+            android:textColor="#454343"
+            android:paddingRight="18dp"
+            android:paddingLeft="18dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:fontFamily="@font/poppins_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hi I am Naman Mandliya and I am founder of this app let me know your review to this app."
+            android:background="@drawable/chat_message_left_bc"/>
+
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/isSeentv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delivered"
+            android:visibility="gone"
+
+            android:layout_alignParentRight="true"
+            android:textColor="#4A4848"
+            android:fontFamily="@font/lato"
+            android:textSize="12sp"/>
+
+
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+</LinearLayout>

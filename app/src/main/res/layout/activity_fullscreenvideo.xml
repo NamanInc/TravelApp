@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    tools:context="com.Adapters.Fullscreenvideo">
+
+
+    <com.google.android.exoplayer2.ui.SimpleExoPlayerView
+        android:layout_width="match_parent"
+        android:id="@+id/exoplayerview_full"
+
+        app:hide_on_touch="true"
+        app:controller_layout_id="@layout/controler"
+
+
+
+        android:layout_height="match_parent"
+        />
+
+
+</LinearLayout>
